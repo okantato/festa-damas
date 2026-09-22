@@ -1,0 +1,6 @@
+{
+  "name": "Festa da Menina - Convite & RSVP",
+  "description": "App oficial de convite, contagem regressiva, confirmação de presença (RSVP) e integração n8n/WhatsApp para a celebração Festa da Menina.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

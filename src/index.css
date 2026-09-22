@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --color-surface: #131315;
+  --color-surface-container: #201f21;
+  --color-surface-container-high: #2a2a2c;
+  --color-surface-container-highest: #353437;
+  --color-surface-container-low: #1c1b1d;
+  --color-surface-container-lowest: #0e0e10;
+  --color-tertiary: #eac34a;
+  --color-tertiary-container: #cca830;
+  --color-on-tertiary: #3c2f00;
+  --color-primary: #d3beea;
+  --color-primary-container: #2a1b3d;
+  --color-secondary: #ffb3b4;
+  --color-secondary-container: #ac012c;
+  --color-on-surface: #e5e1e4;
+  --color-on-surface-variant: #ccc4ce;
+  --color-outline-variant: #4a454d;
+}
+
+@layer base {
+  body {
+    background-color: #131315;
+    color: #e5e1e4;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(110vh) translateX(60px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgba(234, 195, 74, 0.4));
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 24px rgba(234, 195, 74, 0.7));
+  }
+}
+
+.petal {
+  position: absolute;
+  top: -24px;
+  background: radial-gradient(circle, #eac34a 0%, #ac012c 100%);
+  border-radius: 150% 0 150% 0;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+.petal-ruby {
+  position: absolute;
+  top: -24px;
+  background: radial-gradient(circle, #ffb3b4 0%, #7a001a 100%);
+  border-radius: 0 150% 0 150%;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+.mystic-bg {
+  background: linear-gradient(180deg, #131315 0%, #2a1b3d 50%, #0e0e10 100%);
+}
+
+.font-headline {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
