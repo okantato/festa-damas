@@ -63,7 +63,7 @@ export const IntegrationTab: React.FC<IntegrationTabProps> = ({
       },
       evento: {
         titulo: 'FESTA DA MENINA - Da Vó da Casa',
-        data: '15 de Outubro de 2024',
+        data: `15 de Outubro de ${new Date().getFullYear()}`,
         horario: '19h00',
         terreiro: 'Ilé Axé Omo Nanã',
       },

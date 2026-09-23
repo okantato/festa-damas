@@ -116,6 +116,7 @@ export const DownloadInviteModal: React.FC<DownloadInviteModalProps> = ({
 
     const drawTextContent = () => {
       const centerX = width / 2;
+      const eventYear = new Date(event.targetDateTime).getFullYear();
 
       // Header Sparkle
       ctx.fillStyle = '#eac34a';
@@ -165,7 +166,7 @@ export const DownloadInviteModal: React.FC<DownloadInviteModalProps> = ({
 
       ctx.font = '26px sans-serif';
       ctx.fillStyle = '#ffffff';
-      ctx.fillText(`📅  Data: ${event.dateStr} de 2024`, boxX + 40, boxY + 125);
+      ctx.fillText(`📅  Data: ${event.dateStr} de ${eventYear}`, boxX + 40, boxY + 125);
       ctx.fillText(`⏰  Início: ${event.startTime} | Encerramento: ${event.endTime}`, boxX + 40, boxY + 180);
       ctx.fillText(`🔥  Churrasco: ${event.bbqTime}`, boxX + 40, boxY + 235);
       ctx.fillText(`👗  ${event.dressCodeTitle} - Roupas elegantes em harmonia`, boxX + 40, boxY + 290);
@@ -216,7 +217,7 @@ export const DownloadInviteModal: React.FC<DownloadInviteModalProps> = ({
   };
 
   const copyInviteText = () => {
-    const inviteText = `✨ *FESTA DA MENINA - Da Vó da Casa* ✨\n\n"Com muita alegria e respeito, convidamos você e sua entidade para celebrar conosco mais uma noite de festa, força e axé." 🌹\n\n📅 *Data:* ${event.dateStr} de 2024\n⏰ *Início:* ${event.startTime}\n📍 *Local:* ${event.houseName} (${event.address})\n👗 *Traje:* Luxo\n🍾 *Bebida & Fumo:* Traga o de sua entidade\n🚗 *Segurança:* Se beber, não dirija!\n\nConfirme sua presença no app: ${window.location.href}`;
+    const inviteText = `✨ *FESTA DA MENINA - Da Vó da Casa* ✨\n\n"Com muita alegria e respeito, convidamos você e sua entidade para celebrar conosco mais uma noite de festa, força e axé." 🌹\n\n📅 *Data:* ${event.dateStr} de ${new Date(event.targetDateTime).getFullYear()}\n⏰ *Início:* ${event.startTime}\n📍 *Local:* ${event.houseName} (${event.address})\n👗 *Traje:* Luxo\n🍾 *Bebida & Fumo:* Traga o de sua entidade\n🚗 *Segurança:* Se beber, não dirija!\n\nConfirme sua presença no app: ${window.location.href}`;
     navigator.clipboard.writeText(inviteText);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
