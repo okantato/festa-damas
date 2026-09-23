@@ -10,10 +10,12 @@ export const ASSETS = {
     'https://lh3.googleusercontent.com/aida-public/AB6AXuCu8BPEJ_TneJYhhh41zXEkJ6k1XY0jYi_VhEJAk1m3G4Qhy1OBewXhe4qXO1VetZFptErTdfTv-PLX00AYhJxKO-6CcozAOVaf9D6I_U5h4YbxXfeKM9dNN6qzMzxqZt7ERH-Uo2FgIVNv5mTdBYUWlxqJM-wE-HdkTokYyO-PCojg3W_pTtsZvntEpqVyNj179atDrTe3KPI5F5DpMap-HFfQEvOKBosRJeXLGgRBdF20DF-co22l',
 };
 
-// Target date: 15 de Outubro (or dynamic future date for realistic countdown ticking)
-const futureDate = new Date();
-futureDate.setDate(futureDate.getDate() + 18);
-futureDate.setHours(19, 0, 0, 0);
+// Target date: 15 de Outubro (próxima ocorrência às 19h)
+const now = new Date();
+const futureDate = new Date(now.getFullYear(), 9, 15, 19, 0, 0);
+if (futureDate.getTime() <= now.getTime()) {
+  futureDate.setFullYear(futureDate.getFullYear() + 1);
+}
 
 export const DEFAULT_EVENT_DETAILS: EventDetails = {
   title: 'FESTA DA MENINA',

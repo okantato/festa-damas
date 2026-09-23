@@ -161,7 +161,7 @@ export default function App() {
       <BottomNav
         currentTab={currentTab}
         onTabChange={(tab) => setCurrentTab(tab)}
-        confirmedCount={guests.length}
+        confirmedCount={guests.filter((g) => g.status === 'confirmado').length}
       />
 
       {/* Download Card Image Modal */}
