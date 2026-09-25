@@ -2,6 +2,37 @@ export type TabType = 'convite' | 'rsvp' | 'n8n';
 
 export type GuestRole = 'Médium da Casa' | 'Médium Visitante' | 'Convidado / Amigo' | 'Familiar';
 
+export type ConviteStatus = 'pending' | 'confirmed' | 'declined';
+
+export type EntityType = 'pombogira' | 'exu';
+
+export interface Entidade {
+  id?: string;
+  name: string;
+  type: EntityType;
+  description?: string;
+  greeting?: string;
+  created_date?: string;
+}
+
+export interface Convite {
+  id?: string;
+  medium_name: string;
+  entidade_name: string;
+  token: string;
+  status: ConviteStatus;
+  confirmed_at?: string | null;
+  decline_reason?: string | null;
+  phone?: string;
+  role?: GuestRole;
+  companions_count?: number;
+  companion_names?: string;
+  drink_or_offering?: string;
+  notes?: string;
+  checked_in?: boolean;
+  created_date?: string;
+}
+
 export interface RsvpGuest {
   id: string;
   name: string;
@@ -24,7 +55,7 @@ export interface EventDetails {
   address: string;
   locationDetails: string;
   dateStr: string;
-  targetDateTime: string; // ISO string for countdown
+  targetDateTime: string;
   startTime: string;
   endTime: string;
   bbqTime: string;
